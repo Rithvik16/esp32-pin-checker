@@ -547,8 +547,8 @@ export const ESP32PinChecker = () => {
   return <div className="esp32-app">
     <header className="app-header">
       <div className="brand-block">
-        <span className="brand-mark" aria-hidden="true">P</span>
-        <div><h1>ESP32 Pinout</h1></div>
+        <span className="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="6" y="6" width="12" height="12" rx="2" /><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m12 0h4M2 15h4m12 0h4" /><circle cx="12" cy="12" r="2" /></svg></span>
+        <div><h1>ESP32 Pin Checker</h1></div>
       </div>
       <div className="header-actions">
         <a href={board.guideUrl} target="_blank" rel="noreferrer">Board guide <span aria-hidden="true">↗</span></a>
@@ -556,7 +556,7 @@ export const ESP32PinChecker = () => {
     </header>
 
     <main className="home-layout">
-
+      <div className="board-sidebar">
       <section className="board-setup" aria-labelledby="board-setup-title">
         <div className="board-catalog">
           <button className="board-select-trigger" type="button" aria-label={`Selected board: ${board.name}. Change board.`} aria-expanded={boardLibraryOpen} aria-controls="board-catalog-panel" onClick={() => {
@@ -610,6 +610,22 @@ export const ESP32PinChecker = () => {
           <div><strong>{lookupMessage.title}</strong><p>{lookupMessage.body}</p></div>
         </div>}
       </section>
+
+      <section className="board-preview-card" aria-label={`Preview of ${board.name}`}>
+        <div className="board-preview-heading"><span className="eyebrow">SELECTED BOARD</span><strong>{board.name}</strong></div>
+        <div className="board-preview-art">
+          {board.id === "doit-v1" ? <img className="board-image" src={boardAsset} alt="ESP32 DevKit V1 board" /> : <div className={`board-schematic schematic-${board.family}`} role="img" aria-label={`${board.name} board illustration`}>
+            <span className="schematic-port" aria-hidden="true" />
+            <span className="schematic-maker">{board.maker}</span>
+            <span className="schematic-chip"><small>{board.family === "classic" ? "ESP32" : board.family.toUpperCase()}</small><strong>{board.module}</strong></span>
+            <span className="schematic-led" aria-hidden="true" />
+          </div>}
+        </div>
+        <p className="board-preview-caption">{board.module}<span aria-hidden="true">·</span>{board.detail}</p>
+      </section>
+      </div>
+
+      <div className="tool-column">
 
       <section className="purpose-section" aria-labelledby="purpose-title">
         <div className="section-heading">
@@ -712,6 +728,7 @@ export const ESP32PinChecker = () => {
         </section>}
       </div>
 
+      </div>
     </main>
   </div>;
 };
