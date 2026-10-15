@@ -551,9 +551,6 @@ export const ESP32PinChecker = () => {
         <div><h1>ESP32 Pinout</h1></div>
       </div>
       <div className="header-actions">
-        <button className="board-chip" type="button" aria-expanded={boardLibraryOpen} onClick={() => setBoardLibraryOpen(open => !open)}>
-          {board.shortName}<span>Change</span>
-        </button>
         <a href={board.guideUrl} target="_blank" rel="noreferrer">Board guide <span aria-hidden="true">↗</span></a>
       </div>
     </header>

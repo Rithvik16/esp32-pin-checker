@@ -741,3 +741,8 @@
   .purpose-copy strong { font-size: 9px; }
   .recommendations { padding: 10px; }
 }
+
+/* Remove duplicated labels from the compact recommendation cards */
+.recommend-card { padding: 9px 10px; }
+.recommend-card-top, .recommend-card-foot { display: none; }
+.recommend-card-main { margin: 0; align-items: center; }
