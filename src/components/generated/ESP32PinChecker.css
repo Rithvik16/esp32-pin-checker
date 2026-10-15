@@ -703,3 +703,41 @@
   .catalog-search-icon { width: 28px; height: 28px; }
   .catalog-count { font-size: 7px; }
 }
+
+/* Compact single-task workflow */
+.home-layout { width: min(100% - 32px, 900px); padding-top: 18px; padding-bottom: 18px; }
+.app-header { min-height: 58px; padding-top: 8px; padding-bottom: 8px; }
+.board-setup { margin-bottom: 8px; padding: 10px 12px; border-radius: 10px; }
+.board-select-trigger { min-height: 42px; padding: 7px 10px; }
+.board-select-copy strong { font-size: 12px; }
+.board-select-copy em { font-size: 9px; }
+.catalog-count { font-size: 9px; }
+.board-verification-note { margin-top: 6px; padding: 5px 8px; gap: 7px; }
+.board-verification-note p { margin: 0; font-size: 9px; line-height: 1.35; }
+.purpose-section { padding: 11px 13px; border-radius: 10px; }
+.section-heading { margin: 0 1px 8px; }
+.section-heading h3 { font-size: 12px; }
+.purpose-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; }
+.purpose-option { min-height: 40px; padding: 7px 6px; grid-template-columns: minmax(0, 1fr); justify-items: center; border-radius: 8px; }
+.purpose-index, .purpose-arrow, .purpose-copy small { display: none; }
+.purpose-copy { display: block; }
+.purpose-copy strong { font-size: 10px; text-align: center; white-space: normal; }
+.recommendations { margin-top: 8px; padding: 12px; border-radius: 10px; }
+.recommend-heading { margin: 0 1px 8px; }
+.recommend-heading h3 { margin: 0; font-size: 13px; }
+.recommend-grid { gap: 6px; }
+.recommend-card { padding: 9px 10px; border-radius: 8px; }
+.recommend-index { font-size: 7px; }
+.recommend-card-main { margin: 8px 0; }
+.recommend-card-main strong { font-size: 18px; }
+.recommend-card-foot { padding-top: 6px; font-size: 8px; }
+.quick-result { margin-top: 8px; padding: 9px 10px; }
+
+@media (max-width: 600px) {
+  .home-layout { width: calc(100% - 20px); padding-top: 14px; }
+  .board-setup { padding: 8px; }
+  .purpose-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+  .purpose-option { min-height: 37px; }
+  .purpose-copy strong { font-size: 9px; }
+  .recommendations { padding: 10px; }
+}
