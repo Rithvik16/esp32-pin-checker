@@ -547,8 +547,8 @@ export const ESP32PinChecker = () => {
   return <div className="esp32-app">
     <header className="app-header">
       <div className="brand-block">
-        <span className="brand-mark" aria-hidden="true">E</span>
-        <div><h1>Pinout</h1><p>ESP32 GPIO finder</p></div>
+        <span className="brand-mark" aria-hidden="true">P</span>
+        <div><h1>Pinout</h1><p>ESP32 pin checker</p></div>
       </div>
       <div className="header-actions">
         <button className="board-chip" type="button" aria-expanded={boardLibraryOpen} onClick={() => setBoardLibraryOpen(open => !open)}>
@@ -560,19 +560,19 @@ export const ESP32PinChecker = () => {
 
     <main className="home-layout">
       <section className="intro-block" aria-labelledby="page-title">
-        <span className="eyebrow intro-eyebrow"><span className="live-dot" /> BOARD CATALOG · PIN CHECKER</span>
-        <h2 id="page-title">Select your ESP32 board</h2>
-        <p>Search by manufacturer, board name, chip, or module. Then check a pin for your use case.</p>
+        <span className="eyebrow intro-eyebrow"><span className="live-dot" /> ESP32 · GPIO CHECKER</span>
+        <h2 id="page-title">Find the right pin.</h2>
+        <p>Choose your board and task. Get a short list of pins that fit.</p>
       </section>
 
       <section className="board-setup" aria-labelledby="board-setup-title">
         <div className="board-setup-heading">
           <div>
-            <span className="eyebrow">SELECTED BOARD · PROVISIONAL</span>
+            <span className="eyebrow">BOARD PROFILE</span>
             <h3 id="board-setup-title">{board.name}</h3>
             <p>{board.maker} <span>·</span> {board.module}</p>
           </div>
-          <span className="board-confirmed"><span aria-hidden="true">◌</span> Needs verification</span>
+          <span className="board-confirmed"><span aria-hidden="true">!</span> Match your board label</span>
         </div>
 
         <div className="board-catalog">
@@ -581,7 +581,7 @@ export const ESP32PinChecker = () => {
             setLinkFallbackOpen(false);
           }}>
             <span className="catalog-search-icon" aria-hidden="true">⌕</span>
-            <span className="board-select-copy"><small>BOARD LIBRARY</small><strong>{board.name}</strong><em>{board.maker} · {board.module}</em></span>
+            <span className="board-select-copy"><small>SELECTED BOARD</small><strong>{board.name}</strong><em>{board.maker} · {board.module}</em></span>
             <span className="catalog-count">{BOARD_PROFILES.length} profiles <b aria-hidden="true">{boardLibraryOpen ? "⌃" : "⌄"}</b></span>
           </button>
 
@@ -617,6 +617,11 @@ export const ESP32PinChecker = () => {
           </div>}
         </div>
 
+        <div className="board-verification-note" role="note">
+          <span aria-hidden="true">!</span>
+          <p><strong>Before wiring:</strong> match the module marking and GPIO labels on your board to this profile. Clones and revisions can differ.</p>
+        </div>
+
         {savedSource && <div className="saved-source"><span>REFERENCE LINK</span><a href={savedSource} target="_blank" rel="noreferrer">{new URL(savedSource).hostname} <span aria-hidden="true">↗</span></a></div>}
         {lookupMessage && <div className={`lookup-message lookup-${lookupMessage.kind}`} role={lookupMessage.kind === "error" ? "alert" : "status"}>
           <span className="lookup-icon" aria-hidden="true">{lookupMessage.kind === "success" ? "✓" : lookupMessage.kind === "error" ? "!" : "↗"}</span>
@@ -626,7 +631,7 @@ export const ESP32PinChecker = () => {
 
       <section className="purpose-section" aria-labelledby="purpose-title">
         <div className="section-heading">
-          <div><span className="eyebrow step-eyebrow">NEXT · PICK A FUNCTION</span><h3 id="purpose-title">What are you connecting?</h3></div>
+          <div><span className="eyebrow step-eyebrow">CHOOSE A TASK</span><h3 id="purpose-title">What are you connecting?</h3></div>
           <span>Using {board.shortName}</span>
         </div>
         <div className="purpose-grid">
@@ -644,7 +649,7 @@ export const ESP32PinChecker = () => {
 
       <section className="recommendations" aria-labelledby="recommend-title">
         <div className="recommend-heading">
-          <div><span className="eyebrow">YOUR SHORTLIST</span><h3 id="recommend-title">Good pins for {purposeOption.label.toLowerCase()}</h3></div>
+          <div><span className="eyebrow">PIN PICKS</span><h3 id="recommend-title">Best pins for {purposeOption.label.toLowerCase()}</h3></div>
           <span className="auto-tag"><span className="sparkle" aria-hidden="true">✳</span> {board.shortName}</span>
         </div>
         <div className="recommend-grid">
@@ -656,7 +661,7 @@ export const ESP32PinChecker = () => {
             return <button className={`recommend-card ${isSelected ? "is-selected" : ""}`} key={gpio} type="button" aria-pressed={isSelected} onClick={() => setSelectedGpio(gpio)}>
               <span className="recommend-card-top"><span className="recommend-index">{index === 0 ? "BEST MATCH" : "ALSO WORKS"}</span><span className={`tiny-status dot-${pinAssessment.status}`} aria-hidden="true" /></span>
               <span className="recommend-card-main"><strong>GPIO {gpio}</strong><span className="recommend-meta">{highlight}</span></span>
-              <span className="recommend-card-foot"><span>{isSelected ? "Selected pin" : "View compatibility"}</span><span aria-hidden="true">{isSelected ? "✓" : "→"}</span></span>
+              <span className="recommend-card-foot"><span>{isSelected ? "Selected pin" : "See pin details"}</span><span aria-hidden="true">{isSelected ? "✓" : "→"}</span></span>
             </button>;
           })}
         </div>
@@ -666,6 +671,11 @@ export const ESP32PinChecker = () => {
           <div className="quick-result-copy"><strong>{selectedPin.label} · {assessment.title}</strong><p>{assessment.reason}</p>{assessment.note && <small>{assessment.note}</small>}</div>
           {isInputOnly && <span className="quick-result-chip">Input only</span>}
         </div>
+        {purpose === "pullup" && assessment.status === "compatible" && <div className="wiring-hint" role="note" aria-label="Button wiring">
+          <span className="eyebrow">BUTTON WIRING</span>
+          <strong>Connect a button between {selectedPin.label} and GND.</strong>
+          <p>Enable the internal pull-up in software. The pin reads HIGH at rest and LOW when pressed.</p>
+        </div>}
       </section>
 
       <div className="browse-wrap">
@@ -722,7 +732,7 @@ export const ESP32PinChecker = () => {
         </section>}
       </div>
 
-      <footer className="app-footnote">Board profiles are references. Confirm the module marking and silkscreen before wiring.</footer>
+      <footer className="app-footnote">Pinout references are a guide. Match the module and GPIO labels on your board before wiring.</footer>
     </main>
   </div>;
 };

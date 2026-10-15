@@ -532,6 +532,171 @@
 .link-fallback .source-tabs { margin-bottom: 6px; }
 .link-help { margin: 6px 0 0; color: #7d91a2; font-size: 8px; line-height: 1.45; }
 
+/* Hark-inspired editorial clarity: warm paper, crisp type, and action-first copy. */
+.esp32-app {
+  --page: #f5f3ee;
+  --surface: #fffefa;
+  --raised: #f7f5f0;
+  --soft: #eeece5;
+  --line: #d9d6ce;
+  --line-soft: #e8e5dd;
+  --text: #181b19;
+  --muted: #555c58;
+  --subtle: #737b76;
+  --mint: #176b50;
+  --amber: #8b5e0b;
+  --red: #a83f3f;
+  background: var(--page);
+  color: var(--text);
+}
+.esp32-app .app-header { border-color: #dfdcd4; background: rgba(250, 249, 245, 0.94); }
+.esp32-app .brand-mark { border-color: #b7d1c4; border-radius: 50%; background: #e7f0ea; color: #176b50; }
+.esp32-app .brand-block h1 { color: #191d1a; font-family: Georgia, "Times New Roman", serif; font-size: 17px; font-weight: 600; letter-spacing: -0.035em; }
+.esp32-app .brand-block p { color: #737b76; }
+.esp32-app .header-actions { color: #414844; }
+.esp32-app .header-actions a { color: #434b46; }
+.esp32-app .header-actions a:hover { color: #176b50; }
+.esp32-app .board-chip { border-color: #d6d3cb; background: #fffefa; color: #303733; }
+.esp32-app .board-chip:hover { border-color: #9ebcae; background: #f5f8f4; }
+.esp32-app .intro-block h2 { color: #151816; font-family: Georgia, "Times New Roman", serif; font-size: clamp(34px, 4.6vw, 48px); font-weight: 500; letter-spacing: -0.045em; }
+.esp32-app .intro-block p { color: #606762; font-size: 15px; }
+.esp32-app .eyebrow, .esp32-app .intro-eyebrow { color: #626b65; }
+.esp32-app .live-dot { background: #176b50; box-shadow: none; }
+.esp32-app .board-setup { border-color: #dedbd3; background: #fffefa; box-shadow: 0 8px 26px rgba(32, 35, 31, 0.045); }
+.esp32-app .board-setup-heading h3 { color: #1b201c; font-size: 16px; font-weight: 700; }
+.esp32-app .board-setup-heading p { color: #626a65; font-size: 11px; }
+.esp32-app .board-confirmed { border-color: #e7d5ae; background: #fbf4e4; color: #78520d; font-size: 10px; }
+.esp32-app .board-confirmed span { color: #8b5e0b; }
+.esp32-app .board-select-trigger { border-color: #e1ded6; background: #faf9f5; color: #202622; }
+.esp32-app .board-select-trigger:hover, .esp32-app .board-select-trigger[aria-expanded="true"] { border-color: #a7c2b4; background: #f5f8f4; }
+.esp32-app .catalog-search-icon { border-color: #d5e3da; color: #176b50; background: #edf4ef; }
+.esp32-app .board-select-copy small { color: #69716c; font-size: 9px; }
+.esp32-app .board-select-copy strong { color: #1d211e; font-size: 13px; }
+.esp32-app .board-select-copy em, .esp32-app .catalog-count { color: #69716c; font-size: 10px; }
+.esp32-app .catalog-count b { color: #176b50; }
+.esp32-app .board-verification-note { display: flex; align-items: flex-start; gap: 9px; margin-top: 10px; padding: 10px 12px; border: 1px solid #eadcbd; border-radius: 8px; background: #fcf7eb; color: #554629; }
+.esp32-app .board-verification-note > span { width: 18px; height: 18px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 50%; background: #f2e4c6; color: #81570d; font-size: 11px; font-weight: 800; }
+.esp32-app .board-verification-note p { margin: 0; font-size: 11px; line-height: 1.5; }
+.esp32-app .board-verification-note strong { color: #3f321a; }
+.esp32-app .purpose-section, .esp32-app .recommendations { border-color: #dedbd3; border-radius: 12px; background: #fffefa; box-shadow: 0 8px 26px rgba(32, 35, 31, 0.045); }
+.esp32-app .section-heading h3, .esp32-app .recommend-heading h3 { color: #1d211e; font-size: 15px; font-weight: 700; letter-spacing: -0.02em; }
+.esp32-app .section-heading > span { color: #69716c; font-size: 11px; }
+.esp32-app .step-eyebrow { color: #176b50; font-size: 9px; }
+.esp32-app .purpose-option { border-color: #e1ded6; border-radius: 9px; background: #faf9f6; color: #1d211e; }
+.esp32-app .purpose-option:hover { border-color: #b3cbbb; background: #f5f8f4; }
+.esp32-app .purpose-option.is-active { border-color: #548a70; background: #eaf3ed; box-shadow: inset 0 0 0 1px rgba(23, 107, 80, 0.08); }
+.esp32-app .purpose-index { color: #68716b; }
+.esp32-app .purpose-option.is-active .purpose-index, .esp32-app .purpose-option.is-active .purpose-arrow { color: #176b50; }
+.esp32-app .purpose-copy strong { color: #202622; font-size: 12px; font-weight: 700; }
+.esp32-app .purpose-copy small { color: #626a65; font-size: 10px; }
+.esp32-app .purpose-arrow { color: #6e7971; }
+.esp32-app .recommend-heading h3 { font-family: Georgia, "Times New Roman", serif; font-size: 19px; font-weight: 600; }
+.esp32-app .auto-tag { color: #626b65; font-size: 11px; }
+.esp32-app .recommend-index { color: #66716a; font-size: 9px; }
+.esp32-app .recommend-card { border-color: #e0ddd5; border-radius: 10px; background: #faf9f6; color: #1b201c; }
+.esp32-app .recommend-card:hover { border-color: #9dbdaa; background: #f5f8f4; }
+.esp32-app .recommend-card.is-selected { border-color: #377b5b; background: #edf5ef; box-shadow: inset 0 0 0 1px rgba(23, 107, 80, 0.1); }
+.esp32-app .recommend-card-main strong { color: #171b18; font-size: 24px; font-weight: 750; }
+.esp32-app .recommend-meta { color: #53685c; font-size: 10px; }
+.esp32-app .recommend-card-foot { border-color: #e8e5dd; color: #5d655f; font-size: 10px; }
+.esp32-app .recommend-card-foot span:last-child { color: #66716a; }
+.esp32-app .recommend-card.is-selected .recommend-card-foot span:last-child { color: #176b50; }
+.esp32-app .quick-result.result-compatible { border-color: #bdd4c3; background: #edf5ef; }
+.esp32-app .quick-result.result-caution { border-color: #e5d2a8; background: #fbf5e8; }
+.esp32-app .quick-result.result-blocked { border-color: #e5c1bd; background: #fbefed; }
+.esp32-app .quick-result-copy strong { color: #202622; font-size: 12px; }
+.esp32-app .quick-result-copy p { color: #4f5b53; font-size: 11px; }
+.esp32-app .quick-result-copy small { color: #78520d; font-size: 10px; }
+.esp32-app .wiring-hint { margin-top: 9px; padding: 13px 15px; border: 1px solid #c9d9c9; border-radius: 10px; background: #f2f6ef; }
+.esp32-app .wiring-hint .eyebrow { display: block; margin-bottom: 6px; color: #176b50; font-size: 9px; }
+.esp32-app .wiring-hint strong { display: block; color: #1b211c; font-size: 14px; font-weight: 750; }
+.esp32-app .wiring-hint p { margin: 4px 0 0; color: #515d54; font-size: 11px; line-height: 1.5; }
+.esp32-app .browse-toggle { border-color: #dedbd3; border-radius: 10px; background: #fffefa; color: #202622; }
+.esp32-app .browse-toggle:hover { border-color: #a7c2b4; background: #f6f8f4; }
+.esp32-app .browse-icon { border-color: #d5e3da; background: #edf4ef; color: #176b50; }
+.esp32-app .browse-toggle strong { font-size: 11px; }
+.esp32-app .browse-toggle small { color: #636c66; font-size: 10px; }
+.esp32-app .browse-chevron { color: #59635d; }
+.esp32-app .app-footnote { color: #68716b; font-size: 10px; }
+.esp32-app .workspace { gap: 14px; }
+.esp32-app .map-panel, .esp32-app .inspector { border-color: #dedbd3; border-radius: 11px; background: #fffefa; }
+.esp32-app .map-heading { border-color: #e8e5dd; }
+.esp32-app .map-heading h2 { color: #1c211e; font-family: Georgia, "Times New Roman", serif; font-size: 21px; font-weight: 600; }
+.esp32-app .map-subtitle, .esp32-app .legend { color: #5e6761; font-size: 10px; }
+.esp32-app .pin-row { border-color: #e2ded6; border-radius: 5px; background: #faf9f6; color: #202622; }
+.esp32-app .pin-row:hover:not(:disabled) { border-color: #97b7a3; background: #f0f5f0; }
+.esp32-app .pin-row.is-selected { border-color: #38805d; background: #e8f2eb; box-shadow: inset 0 0 0 1px rgba(23, 107, 80, 0.1); }
+.esp32-app .pin-row.is-strapping:not(.is-selected) { border-color: #dfc58e; }
+.esp32-app .pin-row.is-reserved:not(.is-selected) { border-color: #e0c3c0; background: #fbf0ee; }
+.esp32-app .pin-row.is-non-gpio { border-color: #e5e2db; background: #f0efea; color: #626b65; }
+.esp32-app .pin-name { border-color: #dedbd3; background: #f0efea; color: #252b27; }
+.esp32-app .pin-row.is-selected .pin-name { color: #14533e; }
+.esp32-app .pin-feature { color: #59675f; }
+.esp32-app .pin-row.is-selected .pin-feature { color: #176b50; }
+.esp32-app .pin-row.is-strapping .pin-feature { color: #79540e; }
+.esp32-app .pin-row.is-reserved .pin-feature { color: #9e4541; }
+.esp32-app .pin-row.is-non-gpio .pin-feature { color: #68716b; }
+.esp32-app .rail-mark { background: #9da69f; }
+.esp32-app .board-label { color: #222824; }
+.esp32-app .module-label, .esp32-app .board-footnote { color: #657068; }
+.esp32-app .inspector .eyebrow, .esp32-app .reason-block h3 { color: #4f5b53; }
+.esp32-app .selected-name-row h2 { color: #171b18; font-family: Georgia, "Times New Roman", serif; font-weight: 600; }
+.esp32-app .type-chip, .esp32-app .detail-chip { border-color: #d9e2dc; background: #f0f5f1; color: #3d5547; }
+.esp32-app .detail-chip.chip-warning { border-color: #e5d2a8; background: #fbf5e8; color: #79540e; }
+.esp32-app .result-compatible { border-color: #bdd4c3; background: #edf5ef; }
+.esp32-app .result-caution { border-color: #e5d2a8; background: #fbf5e8; }
+.esp32-app .result-blocked { border-color: #e5c1bd; background: #fbefed; }
+.esp32-app .result-title { color: #176b50; }
+.esp32-app .result-caution .result-title { color: #805708; }
+.esp32-app .result-blocked .result-title { color: #9d3838; }
+.esp32-app .result-card p, .esp32-app .detail-list dd { color: #434d46; }
+.esp32-app .detail-list > div { border-color: #e9e6df; }
+.esp32-app .detail-list dt { color: #626b65; }
+.esp32-app .boot-note { color: #6e4e10; background: #fbf5e8; }
+.esp32-app .board-catalog-popover { border-color: #dedbd3; background: #fffefa; box-shadow: 0 18px 42px rgba(30, 34, 30, 0.16); }
+.esp32-app .board-search-label, .esp32-app .board-group-heading { color: #5f6862; }
+.esp32-app .board-search-wrap { border-color: #dcd9d1; background: #faf9f5; color: #176b50; }
+.esp32-app .board-search-wrap input { color: #202622; }
+.esp32-app .board-search-wrap input::placeholder { color: #7b827e; }
+.esp32-app .board-library { border-color: #e5e2db; }
+.esp32-app .board-profile { border-color: #e2dfd8; background: #faf9f6; color: #202622; }
+.esp32-app .board-profile:hover { border-color: #a7c2b4; background: #f4f7f3; }
+.esp32-app .board-profile.is-selected { border-color: #8db39a; background: #edf5ef; }
+.esp32-app .profile-copy strong { color: #202622; }
+.esp32-app .profile-copy small, .esp32-app .board-group-heading small { color: #69716c; }
+.esp32-app .profile-check, .esp32-app .board-profile.is-selected .profile-check { color: #176b50; }
+.esp32-app .link-fallback-toggle { border-color: #e5e2db; color: #5e6761; }
+.esp32-app .link-fallback-toggle strong { color: #176b50; }
+.esp32-app .link-fallback { border-color: #e8e5dd; }
+.esp32-app .source-tabs button { color: #626b65; }
+.esp32-app .source-tabs button:hover { color: #202622; background: #f3f2ec; }
+.esp32-app .source-tabs button.is-active { border-color: #bdd4c3; background: #edf5ef; color: #14533e; }
+.esp32-app .board-link-form input { border-color: #d9d6ce; background: #faf9f5; color: #202622; }
+.esp32-app .board-link-form input::placeholder, .esp32-app .link-help { color: #69716c; }
+.esp32-app .board-link-form button { border-color: #1c211e; background: #1c211e; color: #fffefa; }
+.esp32-app .board-link-form button:hover { background: #333b35; }
+.esp32-app .lookup-message { border-color: #dedbd3; background: #faf9f6; }
+.esp32-app .lookup-message.lookup-success { border-color: #bdd4c3; background: #edf5ef; }
+.esp32-app .lookup-message.lookup-error { border-color: #e5c1bd; background: #fbefed; }
+.esp32-app .lookup-message strong { color: #202622; }
+.esp32-app .lookup-message p { color: #555e58; }
+.esp32-app .saved-source, .esp32-app .saved-source a { color: #626b65; }
+.esp32-app .saved-source a:hover, .esp32-app .saved-source a span { color: #176b50; }
+.esp32-app .purpose-option:focus-visible, .esp32-app .recommend-card:focus-visible, .esp32-app .browse-toggle:focus-visible, .esp32-app .pin-row:focus-visible, .esp32-app .board-chip:focus-visible, .esp32-app .board-select-trigger:focus-visible, .esp32-app .board-profile:focus-visible { outline-color: #176b50; }
+
+@media (max-width: 600px) {
+  .esp32-app .intro-block h2 { font-size: 34px; }
+  .esp32-app .intro-block p { font-size: 13px; }
+  .esp32-app .board-verification-note p { font-size: 10px; }
+  .esp32-app .purpose-copy strong { font-size: 11px; }
+  .esp32-app .purpose-copy small { font-size: 9px; }
+  .esp32-app .recommend-heading h3 { font-size: 17px; }
+  .esp32-app .recommend-meta { font-size: 9px; }
+  .esp32-app .quick-result-copy p, .esp32-app .wiring-hint p { font-size: 10px; }
+  .esp32-app .wiring-hint strong { font-size: 12px; }
+  .esp32-app .app-footnote { font-size: 9px; }
+}
+
 @media (max-width: 600px) {
   .board-catalog-popover { max-height: 65vh; overflow-y: auto; }
   .board-select-trigger { padding: 9px; gap: 8px; }
